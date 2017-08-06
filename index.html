@@ -5,9 +5,48 @@
   </head>
   <body>
     <main>
+      <form id="post-form" onsubmit="createPost()">
+        Post Title: <input type="text" id="postTitle"><br>
+        Post Author: <input type="text" id="postAuthor"><br>
+        Post Content: <input type="textarea" id="postContent"><br>
+        <input type="submit">
+      </form>
     </main>
     <script src="node_modules/lodash/lodash.min.js"></script>
     <script src="index.js"></script>
+
+    <article>
+      <script id="page-template" type="text/x-lodash-template">
+        <div id="sidebar"></div>
+        <div id="post"></div>
+      </script>
+    </article>
+
+    <!-- need to modify this to allow comments to be placed in!!! -->
+    <script id="comment-template" type="text/x-lodash-template">
+      <aside id="sidebar"></aside>
+      <footer></footer>
+    </script>
+
+    <script id="comments-template" type="text/x-lodash-template">
+      <div id="comments">
+        <form id="comment-form" onsubmit="postComment()">
+          Name: <input type="text" id="commentName"><br>
+          Comment: <input type="textarea" id="commentContent"><br>
+          <input type="submit">
+        </form>
+      </div>
+    </script>
+
+    <!-- need to modify this to allow posts to be placed in!!! -->
+    <div id="post-template" type="text/x-lodash-template">
+      <article>
+        <header><header>
+        <footer></footer>
+      </article>
+    </div>
+
+
     <!-- Open this file and call `mocha.run()` in console to run tests -->
     <div id="mocha"></div>
     <script src="node_modules/mocha/mocha.js"></script>
